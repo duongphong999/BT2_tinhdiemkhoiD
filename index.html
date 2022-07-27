@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Tính điểm đại học khối D</h2>
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    Môn toán
+                </td>
+                <td>
+                    <input type="text" id="montoan">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Môn văn
+                </td>
+                <td>
+                    <input type="text" id="monvan">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Môn tiếng anh
+                </td>
+                <td>
+                    <input type="text" id="tienganh">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    khu vực
+                </td>
+                <td>
+                    <select name="" id="d">
+                        <option value="0.75">KV1</option>
+                        <option value="0.25">KV2</option>
+                        <option value="0.5">KV2-NT</option>
+                        <option value="0">KV3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="result()"> kết quả</button>
+                </td>
+            </tr>
+        </table>
+        <p id="result"></p>
+    </form>
+<script>
+    function result(){
+        let toan = +document.getElementById('montoan').value;
+        let van = +document.getElementById('monvan').value;
+        let anh = +document.getElementById('tienganh').value;
+        let tong = toan + van + anh;
+        let kv = +document.getElementById('d').value;
+        let diem = tong + kv;
+        
+        document.getElementById('result').innerHTML=diem;
+    }
+</script>
+</body>
+</html>
