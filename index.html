@@ -40,9 +40,9 @@
                 </td>
                 <td>
                     <select name="" id="d">
-                        <option value="0.75">KV1</option>
-                        <option value="0.25">KV2</option>
-                        <option value="0.5">KV2-NT</option>
+                        <option value="kv1">KV1</option>
+                        <option value="kv2">KV2</option>
+                        <option value="kv2-nt">KV2-NT</option>
                         <option value="0">KV3</option>
                     </select>
                 </td>
@@ -56,15 +56,31 @@
         <p id="result"></p>
     </form>
 <script>
+    
     function result(){
+        debugger;
         let toan = +document.getElementById('montoan').value;
         let van = +document.getElementById('monvan').value;
         let anh = +document.getElementById('tienganh').value;
         let tong = toan + van + anh;
-        let kv = +document.getElementById('d').value;
-        let diem = tong + kv;
+        let kv = document.getElementById('d').value;
+        // let diem = tong + kv;
         
-        document.getElementById('result').innerHTML=diem;
+        // document.getElementById('result').innerHTML=diem;
+       
+       switch(kv){
+            case 'kv1':
+                document.getElementById('result').innerHTML=tong + 0.75;
+            break;
+            case 'kv2':
+                document.getElementById('result').innerHTML=tong + 0.25;
+            case 'kv2-nt':
+                document.getElementById('result').innerHTML=tong + 0.5;
+            break;
+            case'kv3':
+                document.getElementById('result').innerHTML=tong;
+            break;
+       }
     }
 </script>
 </body>
